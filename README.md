@@ -1,3 +1,3 @@
-## Blazor Application
-# CRUD Operations
-# One to Many Relations
+# Blazor Application
+## CRUD Operations
+## One to Many Relations
