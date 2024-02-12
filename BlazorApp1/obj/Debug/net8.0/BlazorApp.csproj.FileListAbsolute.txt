@@ -1,0 +1,6 @@
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.csproj.AssemblyReference.cache
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.AssemblyInfoInputs.cache
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.AssemblyInfo.cs
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.csproj.CoreCompileInputs.cache
+D:\POC Projects\Blazor\BlazorApp\obj\Debug\net8.0\BlazorApp.MvcApplicationPartsAssemblyInfo.cache

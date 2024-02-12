@@ -1,0 +1,73 @@
+﻿@page "/products"
+@using RepositoryLayer.Models
+@using ViewModels
+@inject NavigationManager navigate
+@inject BlazorApp1.Service.IBlazorService service
+@inject IDialogService dialogService
+<PageTitle>Product List</PageTitle>
+
+<h1>Product List</h1>
+
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Action</th>
+                <th>Add Order</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td><a href="@($"fetch/{product.Id}")">@product.Name</a></td>
+                    <td>@product.Price</td>
+                    <td>@product.Description</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="()=>NavigateToEdit(product.Id)">Edit</button>
+                        <button class="btn btn-danger" @onclick="()=>NavigateToDeleteConfirmation(product.Id)">Delete</button>
+                     
+                    </td>
+                    <td>
+                        <button class="btn btn-success" @onclick="()=>NavigateToAddOrder(product.Id)">Add Order</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ProductVM> products = new List<ProductVM>();
+    protected override async Task OnInitializedAsync()
+    {
+        products = (await service.GetAll()).ToList();
+    }
+    private void NavigateToEdit(int id)
+    {
+        navigate.NavigateTo($"/edit/{id}");
+    }
+    private void NavigateToDeleteConfirmation(int productId)
+    {
+        navigate.NavigateTo($"/deleteconfirmation/{productId}");
+    }
+    private void NavigateToAddOrder(int productId)
+    {
+        navigate.NavigateTo($"/addorder/{productId}");
+    }
+   
+    
+}
+
+
+ 
